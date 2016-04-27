@@ -1,4 +1,4 @@
 ---
 ops_bridges:
   - name: bridge_normal
-    ports: [1, 2]
+    ports: [eth1, eth2]

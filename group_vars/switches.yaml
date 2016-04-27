@@ -1,0 +1,36 @@
+---
+# defaults file for switch
+
+# default remote user on the switch
+remote_user: vagrant
+
+# Global variables.
+ops_debug: false
+
+# System default variables.
+ops_system_hostname: "{{ inventory_hostname }}"
+
+# Interface default variables.
+ops_intf_admin_state: down
+ops_intf_autoneg: default
+ops_intf_duplex: full
+ops_interfaces:
+  - name: eth1
+  - name: eth2
+  - name: eth3
+  - name: eth4
+  - name: eth5
+  - name: eth6
+  - name: eth7
+
+# Port default variables.
+ops_port_tag: 1
+ops_port_vlan_mode: access 
+ops_ports:
+  - name: eth1
+  - name: eth2
+  - name: eth3
+  - name: eth4
+  - name: eth5
+  - name: eth6
+  - name: eth7

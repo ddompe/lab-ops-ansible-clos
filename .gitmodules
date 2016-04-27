@@ -1,6 +1,0 @@
-[submodule "roles/switch"]
-	path = roles/switch
-	url = https://github.com/keinohguchi/ops-switch-role
-[submodule "roles/bgp"]
-	path = roles/bgp
-	url = https://github.com/keinohguchi/ops-bgp-role
