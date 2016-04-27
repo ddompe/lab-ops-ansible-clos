@@ -2,16 +2,17 @@
 ansible_user=vagrant
 ansible_ssh_private_key_file=./vagrant_key
 ansible_become_user=root
+ansible_port=22
 ops_username=netop
 ops_password=netop
 ops_system_hostname="{{ inventory_hostname }}"
 
 [all]
-spine1 ansible_host=10.0.3.16
-spine2 ansible_host=10.0.3.17
-leaf1 ansible_host=10.0.3.18
-leaf2 ansible_host=10.0.3.19
-leaf3 ansible_host=10.0.3.20
+spine1 ansible_host=192.168.1.20
+spine2 ansible_host=192.168.1.21
+leaf1 ansible_host=192.168.1.22
+leaf2 ansible_host=192.168.1.23
+leaf3 ansible_host=192.168.1.24
 
 [switches:children]
 spine

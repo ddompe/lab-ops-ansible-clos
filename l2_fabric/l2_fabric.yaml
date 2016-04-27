@@ -1,5 +1,5 @@
 ---
-- name: check the switch version
+- name: Check the Switch Version
   hosts: switches
   gather_facts: yes
   vars:
@@ -24,3 +24,14 @@
     - name: debug the result
       debug: var=result
       when: ops_debug
+
+- name: L2 configuration for all the switches
+  hosts: switches
+  gather_facts: no
+  vars:
+    ansible_user: admin
+    ops_debug: no
+  roles:
+    - role: switch
+      ops_intf_admin_state: up
+
