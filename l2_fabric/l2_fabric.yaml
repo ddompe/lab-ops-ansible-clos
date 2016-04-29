@@ -28,10 +28,6 @@
 - name: L2 configuration for all the switches
   hosts: switches
   gather_facts: no
-  vars:
-    ansible_user: admin
-    ops_debug: no
   roles:
-    - role: switch
-      ops_intf_admin_state: up
+    - { role: switch }
 
