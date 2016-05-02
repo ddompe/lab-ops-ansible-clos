@@ -5,7 +5,7 @@
 remote_user: admin 
 
 # Global variables.
-ops_debug: true
+ops_debug: false
 
 # System default variables.
 ops_system_hostname: "{{ inventory_hostname }}"
