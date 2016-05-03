@@ -6,6 +6,7 @@ ops_vrfs:
       - as_number: 2001
         router_id: 1.1.1.1
         networks: [11.1.1.0/24, 11.2.1.0/24, 11.3.1.0/24]
+        maximum_paths: 3
         neighbors:
           - address: 11.1.1.2
             remote_as: 1001

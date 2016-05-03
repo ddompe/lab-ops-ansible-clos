@@ -32,6 +32,7 @@
     ops_debug: yes
   roles:
     - role: switch
+  ignore_errors: yes
 
 - name: Leaves configuration
   hosts: leaves
