@@ -1,0 +1,17 @@
+---
+ops_vrfs:
+  - name: vrf_default
+    bgp_routers:
+      - as_number: 2002
+        router_id: 172.16.2.1
+        neighbors:
+          - address: 172.16.3.1
+            remote_as: 1001
+          - address: 172.16.4.1
+            remote_as: 1002
+          - address: 172.16.5.1
+            remote_as: 1003
+
+#ops_bridges:
+#  - name: bridge_normal
+#    ports: [eth1, eth2]
