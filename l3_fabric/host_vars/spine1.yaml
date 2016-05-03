@@ -4,14 +4,14 @@ ops_vrfs:
     ports: [ eth1, eth2, eth3 ]
     bgp_routers:
       - as_number: 2001
-        router_id: 172.16.1.1
-        networks: [172.16.1.0/24, 172.16.3.0/24, 172.16.4.0/24, 172.16.5.0/24]
+        router_id: 1.1.1.1
+        networks: [11.1.1.0/24, 11.2.1.0/24, 11.3.1.0/24]
         neighbors:
-          - address: 172.16.3.1
+          - address: 11.1.1.2
             remote_as: 1001
-          - address: 172.16.4.1
+          - address: 11.2.1.2
             remote_as: 1002
-          - address: 172.16.5.1
+          - address: 11.3.1.2
             remote_as: 1003
 
 ops_intf_admin_state: up
@@ -23,8 +23,8 @@ ops_interfaces:
 
 ops_ports:
   - name: eth1
-    ipv4_address: 172.16.3.2/24
+    ipv4_address: 11.1.1.1/24
   - name: eth2
-    ipv4_address: 172.16.4.2/24
+    ipv4_address: 11.2.1.1/24
   - name: eth3
-    ipv4_address: 172.16.5.2/24
+    ipv4_address: 11.3.1.1/24

@@ -1,4 +1,25 @@
 ---
-ops_bridges:
-  - name: bridge_normal
-    ports: [eth1,eth2,eth3]
+ops_vrfs:
+  - name: vrf_default
+    ports: [ eth1, eth2 ]
+    bgp_routers:
+      - as_number: 1002
+        router_id: 4.4.4.4 
+        networks: [11.2.1.0/24, 12.2.1.0/24]
+        neighbors:
+          - address: 11.2.1.1
+            remote_as: 2001
+          - address: 12.2.1.1
+            remote_as: 2002
+
+ops_intf_admin_state: up
+
+ops_interfaces:
+  - name: eth1
+  - name: eth2
+
+ops_ports:
+  - name: eth1
+    ipv4_address: 11.2.1.2/24
+  - name: eth2
+    ipv4_address: 12.2.1.2/24

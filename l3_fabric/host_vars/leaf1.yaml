@@ -1,17 +1,25 @@
 ---
 ops_vrfs:
   - name: vrf_default
+    ports: [ eth1, eth2 ]
     bgp_routers:
       - as_number: 1001
-        router_id: 172.16.0.1
+        router_id: 3.3.3.3 
+        networks: [11.1.1.0/24, 12.1.1.0/24]
         neighbors:
-          - address: 172.16.1.3
-            remote_as: 1001
-          - address: 172.16.2.4
-            remote_as: 1002
-          - address: 172.16.3.5
-            remote_as: 1003
+          - address: 11.1.1.1
+            remote_as: 2001
+          - address: 12.1.1.1
+            remote_as: 2002
 
-#ops_bridges:
-#  - name: bridge_normal
-#    ports: [eth1, eth2]
+ops_intf_admin_state: up
+
+ops_interfaces:
+  - name: eth1
+  - name: eth2
+
+ops_ports:
+  - name: eth1
+    ipv4_address: 11.1.1.2/24
+  - name: eth2
+    ipv4_address: 12.1.1.2/24

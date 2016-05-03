@@ -25,10 +25,19 @@
       debug: var=result
       when: ops_debug
 
-- name: L3 configuration for all the switches
-  hosts: spine1 
+- name: Spine configuration
+  hosts: spines
   gather_facts: no
   vars:
     ops_debug: yes
   roles:
     - role: switch
+
+- name: Leaves configuration
+  hosts: leaves
+  gather_facts: no
+  vars:
+    ops_debug: yes
+  roles:
+    - role: switch
+
