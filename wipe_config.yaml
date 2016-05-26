@@ -1,0 +1,16 @@
+---
+- name: wipe switch config
+  hosts: switches
+  gather_facts: no
+  vars:
+    ansible_user: admin
+    ops_debug: no
+  roles:
+    - role: switch
+      ops_vrfs:
+        - name: vrf_default
+          ports: []
+      ops_bridges:
+        - name: bridge_normal
+          vlans: []
+          ports: []
